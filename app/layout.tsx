@@ -1,3 +1,6 @@
+import { Montserrat } from "next/font/google";
+import './ui/global.css';
+
 export default function RootLayout({
   children,
 }: {
@@ -5,7 +8,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={'${montserrat.className} antialiased'}>
+        Esto es parte del Layout
+        {children}
+        <footer className='py-10 flex justify-center items-center'>
+          Hecho con amorcito por la gente de vercel
+        </footer>
+      </body>
     </html>
-  );
+  )
 }
